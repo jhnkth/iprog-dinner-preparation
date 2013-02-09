@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="uniMargin">10px</dimen>
+    <dimen name="title_size">24sp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="dishTitleSize">18dp</dimen>
+    <dimen name="optionIconSize">40dp</dimen>
+    <dimen name="dishImageWidth">120dp</dimen>
+</resources>

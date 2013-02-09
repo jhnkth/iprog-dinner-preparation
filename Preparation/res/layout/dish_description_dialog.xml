@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dish_dialog_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/dish_dialog_description_container"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_above="@+id/dish_dialog_back_button"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/uniMargin" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            
+            <TextView
+	            android:id="@+id/dish_dialog_title"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_horizontal"
+	            android:text="Dish Title"
+	            android:textSize="@dimen/title_size" />
+        
+	        <ImageView
+	            android:id="@+id/dish_dialog_image"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/dish_dialog_title"
+	            android:adjustViewBounds="true"
+	            android:src="@drawable/ingredients" />
+	
+	        <TextView
+	            android:id="@+id/dish_dialog_ingredients"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/dish_dialog_image"
+	            android:text="List of Ingredients List of Ingredients List of Ingredients List of Ingredients List of Ingredients List of Ingredients List of Ingredients " />
+	        
+	        <TextView
+	            android:id="@+id/dish_dialog_description"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/dish_dialog_ingredients"
+	            android:text="TextView" />
+        </RelativeLayout>
+    
+    </ScrollView>
+
+    <Button
+        android:id="@id/dish_dialog_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/back" />
+
+</RelativeLayout>

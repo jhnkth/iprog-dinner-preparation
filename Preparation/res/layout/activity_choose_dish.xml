@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseAppetizer" >
+
+    <RelativeLayout
+        android:id="@+id/optionsBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/guestsIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:maxHeight="@dimen/optionIconSize"
+            android:src="@drawable/guests" />
+
+        <TextView
+            android:id="@+id/numGuestsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/guestsIcon"
+            android:text="6"
+            android:textSize="@dimen/title_size" />
+
+        <ImageView
+            android:id="@+id/dollarSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:maxHeight="@dimen/optionIconSize"
+            android:src="@drawable/cost" />
+
+        <TextView
+            android:id="@+id/priceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/dollarSign"
+            android:text="0.00"
+            android:textSize="@dimen/title_size" />
+
+        <ImageButton
+            android:id="@+id/ingredientsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/uniMargin"
+            android:layout_toLeftOf="@+id/priceLabel"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:maxHeight="@dimen/optionIconSize"
+            android:scaleType="fitXY"
+            android:src="@drawable/ingredients" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/dishList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonsLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/dishSelectTitle"
+        android:choiceMode="singleChoice" >
+
+    </ListView>
+
+    <RelativeLayout
+        android:id="@id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:src="@drawable/prev" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:src="@drawable/next" />
+
+    <TextView
+        android:id="@+id/dishSelectTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/optionsBar"
+        android:gravity="center_horizontal"
+        android:text="DishTitle"
+        android:textSize="@dimen/title_size" />
+
+</RelativeLayout>

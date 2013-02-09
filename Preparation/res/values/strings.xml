@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DinnerPlanner</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="WelcomeText">Welcome Text will be here!!!</string>
+    <string name="welcome_button">Create New Dinner</string>
+    <string name="WelcomeTitle">The Dinner Application</string>
+    <string name="title_activity_choose_appetizer">Choose Appetizer</string>
+    <string name="appetizersTitle">Choose Appetizer</string>
+    <string name="title_activity_choose_main_dish">Choose Main Dish</string>
+    <string name="mainDishesTitle">Choose Main Course</string>
+    <string name="chooseDessertTitle">Choose Dessert</string>
+    <string name="title_activity_choose_dessert">Choose Dessert</string>
+    <string name="back">Back</string>
+    <string name="title_activity_startscreen">Startscreen</string>
+    <string name="title_activity_ingredients">Ingredients</string>
+    <string name="title_activity_preparation">Preparation</string>
+
+</resources>
