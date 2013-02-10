@@ -6,7 +6,9 @@ import se.kth.csc.iprog.dinnerplanner.ChooseDish;
 import se.kth.csc.iprog.dinnerplanner.ChooseMainDish;
 import se.kth.csc.iprog.dinnerplanner.DinnerPlannerApplication;
 import se.kth.csc.iprog.dinnerplanner.DishDescriptionDialog;
+import se.kth.csc.iprog.dinnerplanner.Preparation;
 import se.kth.csc.iprog.dinnerplanner.ShowIngredients;
+import se.kth.csc.iprog.dinnerplanner.StartScreen;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import android.app.Activity;
 import android.content.Intent;
@@ -39,16 +41,20 @@ public class MainStateController
 	public void next() 
 	{
 		Class nextActivity;
-		if( currentActivity instanceof ChooseMainDish )
-			nextActivity = ChooseDessert.class;
+		if (currentActivity instanceof StartScreen)
+			nextActivity = ChooseAppetizer.class;
 		
-		/* Here goes else-if blocks for other states */
-		/* Here goes else-if blocks for other states */
 		else if( currentActivity instanceof ChooseAppetizer)
 			nextActivity = ChooseMainDish.class;
 		
-		else
+		else if( currentActivity instanceof ChooseMainDish )
+			nextActivity = ChooseDessert.class;
+
+		else if(currentActivity instanceof ChooseDessert)
 			nextActivity = ShowIngredients.class;
+		
+		else
+			nextActivity = Preparation.class;
 		
 		Intent nextStateIntent = new Intent( currentActivity, nextActivity );
 		currentActivity.startActivity( nextStateIntent );
