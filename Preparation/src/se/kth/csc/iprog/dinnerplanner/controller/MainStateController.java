@@ -1,8 +1,12 @@
 package se.kth.csc.iprog.dinnerplanner.controller;
 
+import se.kth.csc.iprog.dinnerplanner.ChooseAppetizer;
 import se.kth.csc.iprog.dinnerplanner.ChooseDessert;
+import se.kth.csc.iprog.dinnerplanner.ChooseDish;
 import se.kth.csc.iprog.dinnerplanner.ChooseMainDish;
 import se.kth.csc.iprog.dinnerplanner.DinnerPlannerApplication;
+import se.kth.csc.iprog.dinnerplanner.DishDescriptionDialog;
+import se.kth.csc.iprog.dinnerplanner.ShowIngredients;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import android.app.Activity;
 import android.content.Intent;
@@ -27,7 +31,8 @@ public class MainStateController
 	// Switch to the previous activity(state)
 	public void previous() 
 	{
-		// TODO: Take action according to the current Activity
+		//Take action according to the current Activity
+		currentActivity.finish();
 	}
 
 	// Switch to the next activity(state)
@@ -38,8 +43,12 @@ public class MainStateController
 			nextActivity = ChooseDessert.class;
 		
 		/* Here goes else-if blocks for other states */
-		else
+		/* Here goes else-if blocks for other states */
+		else if( currentActivity instanceof ChooseAppetizer)
 			nextActivity = ChooseMainDish.class;
+		
+		else
+			nextActivity = ShowIngredients.class;
 		
 		Intent nextStateIntent = new Intent( currentActivity, nextActivity );
 		currentActivity.startActivity( nextStateIntent );
@@ -48,6 +57,9 @@ public class MainStateController
 	// Open the dish description dialog
 	public void dishDialog() 
 	{
-		// TODO: Open a dialog in the current activity with the selected dish
+		//Open a dialog in the current activity with the selected dish
+		DishDescriptionDialog dialog = new DishDescriptionDialog(currentActivity);
+		dialog.setDish(((ChooseDish)currentActivity).getSelectedDish());
+		dialog.show();
 	}
 }

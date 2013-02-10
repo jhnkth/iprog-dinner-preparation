@@ -108,6 +108,11 @@ public abstract class ChooseDish extends Activity
 	    
 	    return super.onKeyDown(keyCode, event);
 	}
-	
+	public Dish getSelectedDish()
+	{
+		ListView lv = (ListView)this.findViewById(R.id.dishList);
+		return (Dish)lv.getSelectedItem();
+		
+	}
 	
 }
