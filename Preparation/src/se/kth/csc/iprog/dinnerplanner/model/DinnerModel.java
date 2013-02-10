@@ -8,6 +8,8 @@ public class DinnerModel implements IDinnerModel
 	Set<Dish> dishes = new HashSet<Dish>();
 	
 	int numGuests;
+	
+	// Currently selected dishes
 	Set<Dish> selectedDishes = new HashSet<Dish>(); 
 	
 	/**
@@ -196,6 +198,22 @@ public class DinnerModel implements IDinnerModel
 		}
 		
 		return null;
+	}
+	
+	public void selectDish( Dish dish )
+	{
+		// If a dish with the current type is already selected
+		// Remove the previous one and add the new dish
+		for( Dish d: selectedDishes )
+		{
+			if( d != null && d.getType() == dish.getType() )
+			{
+				selectedDishes.remove( d );
+				break;
+			}
+		}
+		
+		selectedDishes.add(dish);
 	}
 
 	@Override

@@ -29,6 +29,10 @@ public class ChooseDishController implements OnClickListener
 		
 		else if( button == activity.getNextButton() )
 		{
+			// Do nothing or create a toast if not any dish is selected
+			
+			// If a dish is selected, put it into the model
+			
 			mainController.next();
 		}
 		

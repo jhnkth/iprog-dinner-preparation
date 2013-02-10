@@ -17,11 +17,6 @@
         <activity
             android:name="se.kth.csc.iprog.dinnerplanner.ChooseAppetizer"
             android:label="@string/title_activity_choose_appetizer" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-        	</intent-filter>
         </activity>
         <activity
             android:name="se.kth.csc.iprog.dinnerplanner.ChooseMainDish"
@@ -34,6 +29,11 @@
         <activity
             android:name="se.kth.csc.iprog.dinnerplanner.StartScreen"
             android:label="@string/title_activity_startscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+        	</intent-filter>
         </activity>
         <activity
             android:name="se.kth.csc.iprog.dinnerplanner.ShowIngredients"
