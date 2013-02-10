@@ -114,6 +114,7 @@ public final class R {
         public static final int title_activity_ingredients=0x7f05000e;
         public static final int title_activity_preparation=0x7f05000f;
         public static final int title_activity_startscreen=0x7f05000d;
+        public static final int toastMessage=0x7f050010;
         public static final int welcome_button=0x7f050004;
     }
     public static final class style {

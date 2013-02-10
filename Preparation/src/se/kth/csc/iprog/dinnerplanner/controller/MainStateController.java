@@ -68,4 +68,10 @@ public class MainStateController
 		dialog.setDish(((ChooseDish)currentActivity).getSelectedDish());
 		dialog.show();
 	}
+
+	public void closeDishDialog()
+	{
+		DishDescriptionDialog dialog = new DishDescriptionDialog(currentActivity);
+		dialog.dismiss();
+	}
 }

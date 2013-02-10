@@ -17,5 +17,6 @@
     <string name="title_activity_startscreen">Startscreen</string>
     <string name="title_activity_ingredients">Ingredients</string>
     <string name="title_activity_preparation">Preparation</string>
+    <string name="toastMessage">No Dish Selected</string>
 
 </resources>
