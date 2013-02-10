@@ -1,9 +1,10 @@
 package se.kth.csc.iprog.dinnerplanner;
 
+import se.kth.csc.iprog.dinnerplanner.controller.DishDialogController;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import se.kth.csc.iprog.dinnerplanner.model.Ingredient;
+import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,12 +17,14 @@ public class DishDescriptionDialog extends Dialog
 	private ImageView dishImage;
 	private Button backButton;
 	
-	private Context context;
+	private Activity activity;
 	
-	public DishDescriptionDialog(Context context) 
+	private DishDialogController controller;
+	
+	public DishDescriptionDialog(Activity activity) 
 	{
-		super(context);
-		this.context = context;
+		super(activity);
+		this.activity = activity;
 		setContentView(R.layout.dish_description_dialog);
 		
 		this.title = (TextView) findViewById(R.id.dish_dialog_title);
@@ -29,6 +32,9 @@ public class DishDescriptionDialog extends Dialog
 		this.ingredients = (TextView) findViewById(R.id.dish_dialog_ingredients);
 		this.description = (TextView) findViewById(R.id.dish_dialog_description);
 		this.backButton = (Button) findViewById(R.id.dish_dialog_back_button );
+		
+		controller = new DishDialogController( this );
+		backButton.setOnClickListener( controller );
 	}
 
 	// Updates the content according to the parameter dish
@@ -43,7 +49,7 @@ public class DishDescriptionDialog extends Dialog
 				dish.getImage();
  		
 		dishImage.setImageResource( 
- 				context.getResources().getIdentifier( resourceName, "drawable", context.getPackageName() ) );
+				activity.getResources().getIdentifier( resourceName, "drawable", activity.getPackageName() ) );
  		
  		// Set the list of ingredients
 		String ingredientsList = "";
@@ -55,5 +61,15 @@ public class DishDescriptionDialog extends Dialog
  		
  		// Set the description(preparation) of the dish
  		description.setText( dish.getDescription() );
+	}
+	
+	public Activity getActivity()
+	{
+		return this.activity;
+	}
+	
+	public Button getBackButton()
+	{
+		return this.backButton;
 	}
 }

@@ -1,11 +1,8 @@
 package se.kth.csc.iprog.dinnerplanner;
 
-import se.kth.csc.iprog.dinnerplanner.DishAdapter.DishHolder;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
-
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +23,6 @@ public class PreparationAdapter extends ArrayAdapter<Dish> {
         this.context = context;
         this.data = data;
     }
-    
-	
     
     @Override
 	public View getView(int position, View convertView, ViewGroup parent)

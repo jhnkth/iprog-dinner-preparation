@@ -9,8 +9,12 @@ import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,6 +30,8 @@ public abstract class ChooseDish extends Activity
 	private ImageButton nextButton;
 	private ImageButton descriptionButton;
 	private ChooseDishController controller;
+	
+	private int selectedDishPos = -1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -82,6 +88,14 @@ public abstract class ChooseDish extends Activity
         ListView dishList = (ListView) findViewById(R.id.dishList);
         dishList.setAdapter(adapter);
         dishList.setSelector( R.drawable.list_selection );
+        
+        dishList.setOnItemClickListener(new OnItemClickListener() 
+        {
+            public void onItemClick(AdapterView<?> adView, View target, int position, long id) 
+            {
+                selectedDishPos = position;            
+            }
+        });
 	}
 
 	public ImageButton getBackButton() {
@@ -110,9 +124,9 @@ public abstract class ChooseDish extends Activity
 	}
 	public Dish getSelectedDish()
 	{
-		ListView lv = (ListView)this.findViewById(R.id.dishList);
-		return (Dish)lv.getSelectedItem();
-		
+		ListView lv = (ListView) this.findViewById(R.id.dishList);
+		Log.d( "ASD", selectedDishPos + " " );
+		return (Dish)lv.getItemAtPosition( selectedDishPos );
 	}
 	
 }

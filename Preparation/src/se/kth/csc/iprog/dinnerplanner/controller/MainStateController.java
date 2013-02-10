@@ -12,6 +12,7 @@ import se.kth.csc.iprog.dinnerplanner.StartScreen;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 public class MainStateController 
 {
@@ -64,14 +65,18 @@ public class MainStateController
 	public void dishDialog() 
 	{
 		//Open a dialog in the current activity with the selected dish
-		DishDescriptionDialog dialog = new DishDescriptionDialog(currentActivity);
-		dialog.setDish(((ChooseDish)currentActivity).getSelectedDish());
-		dialog.show();
+		DishDescriptionDialog dishDescriptionDialog = new DishDescriptionDialog(currentActivity);
+		dishDescriptionDialog.setDish(((ChooseDish)currentActivity).getSelectedDish());
+		dishDescriptionDialog.show();
 	}
 
-	public void closeDishDialog()
+	public void closeDishDialog( DishDescriptionDialog dialog )
 	{
-		DishDescriptionDialog dialog = new DishDescriptionDialog(currentActivity);
 		dialog.dismiss();
+	}
+	
+	public Activity getCurrentActivity() 
+	{
+		return currentActivity;
 	}
 }

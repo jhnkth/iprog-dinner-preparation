@@ -1,9 +1,11 @@
 package se.kth.csc.iprog.dinnerplanner.controller;
 
+import se.kth.csc.iprog.dinnerplanner.ChooseAppetizer;
 import se.kth.csc.iprog.dinnerplanner.ChooseDish;
 import se.kth.csc.iprog.dinnerplanner.DinnerPlannerApplication;
 import se.kth.csc.iprog.dinnerplanner.R;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -30,10 +32,13 @@ public class ChooseDishController implements OnClickListener
 		}
 		
 		else if( button == activity.getNextButton() )
-		{
-			// Do nothing or create a toast if not any dish is selected
-			if(activity.getSelectedDish() == null)
+		{			
+			// Do nothing or create a toast if no dish is selected
+			if( activity.getSelectedDish() == null )
+			{
 				Toast.makeText(activity, R.string.toastMessage, Toast.LENGTH_LONG).show();
+			}
+			
 			// If a dish is selected, put it into the model
 			else
 			{
